@@ -6,8 +6,6 @@ function loadDate() {
     // date function 
     dt.setDate(1)
 const monthStartingDay = dt.getDay()
-console.log(monthStartingDay)
-
 const monthEnded = new Date(dt.getFullYear(), dt.getMonth() + 1, 0)
 
 
@@ -25,7 +23,6 @@ let monthList = [
 
     }
     // loop for date
-console.log(monthEnded.getDate())
     for (let i = 1; i <= monthEnded.getDate(); i++) {
         date += `<div> ${i} </div>`
     }
@@ -41,3 +38,13 @@ function changeMonth(direction) {
     loadDate()
 }
 
+
+
+// night mode
+document.getElementById('switch').addEventListener('click', function (event) {
+    if (!event.target.checked) {
+        document.body.classList.add('night')
+    } else {
+        document.body.classList.remove('night')
+    }
+})
